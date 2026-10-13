@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <title>魔与道攻略站</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top">魔与道攻略站</a>
+        <nav class="nav" aria-label="主要导航">
+          <a href="#guides">攻略</a>
+          <a href="#categories">分类</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="wrap">
+      <section class="hero">
+        <div class="game-image">
+          <img src="./assets/game-icon.png" alt="魔与道游戏图" />
+          <div class="image-placeholder">
+            <strong>游戏图位置</strong>
+            <span>把图片命名为 game-icon.png 放进 assets 文件夹</span>
+          </div>
+        </div>
+
+        <div class="intro">
+          <p class="kicker">攻略内容整理</p>
+          <h1>魔与道游戏攻略</h1>
+          <p>把副本机制、职业养成、装备搭配和活动路线整理成一篇篇容易查找的文章。</p>
+
+          <form class="search-box" id="searchForm">
+            <input id="searchInput" type="search" placeholder="搜索攻略、职业、副本、装备..." autocomplete="off" />
+            <button type="submit">搜索</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="guide-section" id="guides">
+        <div class="section-title">
+          <div>
+            <p class="kicker">Guide List</p>
+            <h2>攻略文章</h2>
+          </div>
+          <span id="resultCount"></span>
+        </div>
+
+        <div class="filters" id="categories" aria-label="攻略分类">
+          <button class="filter-chip active" type="button" data-filter="全部">全部</button>
+          <button class="filter-chip" type="button" data-filter="副本">副本</button>
+          <button class="filter-chip" type="button" data-filter="职业">职业</button>
+          <button class="filter-chip" type="button" data-filter="装备">装备</button>
+          <button class="filter-chip" type="button" data-filter="活动">活动</button>
+        </div>
+
+        <div class="guide-list" id="guideList"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <h3>没有找到相关攻略</h3>
+          <p>换个关键词，或者先查看全部分类。</p>
+        </div>
+
+        <button class="load-more" id="loadMore" type="button">加载更多</button>
+      </section>
+
+      <section class="article-reader" id="articleReader" hidden>
+        <button class="back-link" id="backToList" type="button">返回攻略列表</button>
+        <div class="reader-layout">
+          <aside class="article-toc" id="articleToc" aria-label="文章目录"></aside>
+          <article class="article-body">
+            <div class="article-meta" id="articleMeta"></div>
+            <h2 id="articleTitle"></h2>
+            <p class="article-lead" id="articleLead"></p>
+            <div class="article-content" id="articleContent"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">魔与道攻略站 · 玩家经验整理</div>
+    </footer>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
